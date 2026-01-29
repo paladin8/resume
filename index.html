@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeffrey Wang - Resume</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.45;
+      color: #333;
+      max-width: 8.5in;
+      margin: 0 auto;
+      padding: 0.5in;
+      background: #fff;
+    }
+
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1rem;
+      background: #333;
+      color: #fff;
+      border-radius: 4px;
+      margin-bottom: 0.85rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    .contact-info {
+      text-align: right;
+      font-size: 0.9rem;
+    }
+
+    .contact-info a {
+      display: block;
+      color: #ccc;
+    }
+
+    .contact-info a:hover {
+      color: #fff;
+    }
+
+    section {
+      margin-bottom: 1.25rem;
+    }
+
+    h2 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid #999;
+      padding-bottom: 0.2rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .job {
+      display: flex;
+      gap: 0.65rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .job:last-child {
+      margin-bottom: 0;
+    }
+
+    .job-logo {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .job-logo a {
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
+
+    .job-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .job-content {
+      flex: 1;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .job-title-company {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .job-title {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .job-company {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .job-meta {
+      text-align: right;
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    .job-dates, .job-location {
+      white-space: nowrap;
+    }
+
+    .job-bullets {
+      margin-top: 0.4rem;
+      padding-left: 1.25rem;
+    }
+
+    .job-bullets li {
+      margin-bottom: 0.15rem;
+      font-size: 0.9rem;
+    }
+
+    .job-bullets li:last-child {
+      margin-bottom: 0;
+    }
+
+    .school {
+      display: flex;
+      gap: 0.65rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .school:last-child {
+      margin-bottom: 0;
+    }
+
+    .school-logo {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .school-logo a {
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
+
+    .school-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .school-content {
+      flex: 1;
+    }
+
+    .school-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .school-degree-name {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .school-degree {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .school-name {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .school-meta {
+      text-align: right;
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    .school-dates, .school-location {
+      white-space: nowrap;
+    }
+
+    .awards-list {
+      list-style: none;
+    }
+
+    .awards-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0.15rem 0;
+    }
+
+    .award-name {
+      font-weight: 500;
+    }
+
+    .award-meta {
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    .project {
+      margin-bottom: 0.6rem;
+    }
+
+    .project:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+
+    .project-name {
+      font-weight: 600;
+    }
+
+    .project-link {
+      font-size: 0.85rem;
+    }
+
+    .project-description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-top: 0.2rem;
+    }
+
+    @media print {
+      body {
+        padding: 0;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      a {
+        color: #333;
+      }
+
+      @page {
+        margin: 0.5in;
+        size: letter;
+      }
+
+      .job {
+        break-inside: avoid;
+      }
+
+      .job-logo, .school-logo {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .school, .project {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Jeffrey Wang</h1>
+    <div class="contact-info">
+      <a href="https://github.com/paladin8" target="_blank">github.com/paladin8</a>
+      <a href="mailto:jeffreyw314159@gmail.com" target="_blank">jeffreyw314159@gmail.com</a>
+    </div>
+  </header>
+
+  <section class="experience">
+    <div class="job">
+      <div class="job-logo">
+        <a href="https://amplitude.com" target="_blank"><img src="logos/amplitude.png" alt="Amplitude logo"></a>
+      </div>
+      <div class="job-content">
+        <div class="job-header">
+          <div class="job-title-company">
+            <span class="job-title">Co-founder, Chief Architect</span>
+            <span class="job-company">Amplitude</span>
+          </div>
+          <div class="job-meta">
+            <div class="job-dates">April 2014 - September 2025</div>
+            <div class="job-location">San Francisco, CA</div>
+          </div>
+        </div>
+        <ul class="job-bullets">
+          <li>Helped grow Amplitude's business to over $300M/year in revenue and 800 employees.</li>
+          <li>Architected and built multiple generations of the Amplitude product, including high-throughput event ingestion systems, an in-house columnar data warehouse, and core AI infrastructure.</li>
+          <li>Was the most prolific individual contributor (10k+ commits, 5k+ code reviews) as well as an engineering and product leader (setting long-term strategy/direction).</li>
+          <li>Mentored 100+ engineers ranging from new grad to principal level and developed a high-ownership, practically-driven engineering culture.</li>
+          <li>Participated in hundreds of customer meetings and investor/analyst presentations discussing Amplitude's technology and product, including the process leading up to the public listing.</li>
+          <li>Actively managed and optimized a $50M/year AWS infrastructure (primarily EC2, S3, DynamoDB).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-logo">
+        <a href="https://sumologic.com" target="_blank"><img src="logos/sumologic.png" alt="Sumo Logic logo"></a>
+      </div>
+      <div class="job-content">
+        <div class="job-header">
+          <div class="job-title-company">
+            <span class="job-title">Senior Software Engineer</span>
+            <span class="job-company">Sumo Logic</span>
+          </div>
+          <div class="job-meta">
+            <div class="job-dates">Dec 2012 - Mar 2014</div>
+            <div class="job-location">Redwood City, CA</div>
+          </div>
+        </div>
+        <ul class="job-bullets">
+          <li>Built and maintained a dynamic configuration and ingestion endpoint for log collection agents.</li>
+          <li>Optimized search query performance through online merging of hot Lucene indices.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-logo">
+        <a href="https://en.wikipedia.org/wiki/Clinkle" target="_blank"><img src="logos/clinkle.png" alt="Clinkle logo"></a>
+      </div>
+      <div class="job-content">
+        <div class="job-header">
+          <div class="job-title-company">
+            <span class="job-title">Lead Backend Engineer</span>
+            <span class="job-company">Clinkle</span>
+          </div>
+          <div class="job-meta">
+            <div class="job-dates">Mar 2012 - Nov 2012</div>
+            <div class="job-location">Mountain View, CA</div>
+          </div>
+        </div>
+        <ul class="job-bullets">
+          <li>Led the backend engineering team at an early-stage mobile payments startup, building the infrastructure for a mobile wallet.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-logo">
+        <a href="https://palantir.com" target="_blank"><img src="logos/palantir.png" alt="Palantir logo"></a>
+      </div>
+      <div class="job-content">
+        <div class="job-header">
+          <div class="job-title-company">
+            <span class="job-title">Software Engineer</span>
+            <span class="job-company">Palantir</span>
+          </div>
+          <div class="job-meta">
+            <div class="job-dates">Jun 2010 - Sep 2011</div>
+            <div class="job-location">Palo Alto, CA</div>
+          </div>
+        </div>
+        <ul class="job-bullets">
+          <li>Built a Cassandra-based distributed log processing system for efficient searching and filtering over terabytes of log data.</li>
+        </ul>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="education">
+    <h2>Education</h2>
+
+    <div class="school">
+      <div class="school-logo">
+        <a href="https://stanford.edu" target="_blank"><img src="logos/stanford.png" alt="Stanford logo"></a>
+      </div>
+      <div class="school-content">
+        <div class="school-header">
+          <div class="school-degree-name">
+            <span class="school-degree">B.S. Computer Science</span>
+            <span class="school-name">Stanford University</span>
+          </div>
+          <div class="school-meta">
+            <div class="school-dates">Sep 2007 - Jun 2010</div>
+            <div class="school-location">Stanford, CA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="awards">
+    <h2>Highlights & Awards</h2>
+
+    <ul class="awards-list">
+      <li>
+        <span class="award-name">2021 Amplitude Public Listing (AMPL)</span>
+        <span class="award-meta">New York</span>
+      </li>
+      <li>
+        <span class="award-name">2012 Google Code Jam Finalist (Top 25)</span>
+        <span class="award-meta">New York</span>
+      </li>
+      <li>
+        <span class="award-name">2010 ACM ICPC World Finals (14th Place)</span>
+        <span class="award-meta">Harbin, China</span>
+      </li>
+      <li>
+        <span class="award-name">2007, 2008 Putnam Honorable Mention (Top 75)</span>
+        <span class="award-meta">Stanford</span>
+      </li>
+    </ul>
+
+  </section>
+
+  <section class="projects">
+    <h2>Projects</h2>
+
+    <div class="project">
+      <div class="project-header">
+        <span class="project-name"><a href="https://kfchess.com" target="_blank">kfchess.com</a> - Kung Fu Chess</span>
+        <span class="project-link"><a href="https://github.com/paladin8/kfchess-cc" target="_blank">github.com/paladin8/kfchess-cc</a></span>
+      </div>
+      <p class="project-description">A real-time variant of chess inspired by modern RTS games.</p>
+    </div>
+
+    <div class="project">
+      <div class="project-header">
+        <span class="project-name">Ternary Search</span>
+        <span class="project-link"><a href="https://ternarysearch.blogspot.com" target="_blank">ternarysearch.blogspot.com</a></span>
+      </div>
+      <p class="project-description">Personal blog covering a variety of programming and computer science topics.</p>
+    </div>
+
+  </section>
+</body>
+</html>
